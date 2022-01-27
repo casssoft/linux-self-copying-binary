@@ -33,5 +33,8 @@ pub fn main() !void {
     );
     defer file.close();
     _ = try file.write(elf[0..size[0]]);
+    // TODO set executable flags on the new file
 
+    const stdout = std.io.getStdOut().writer();
+    try stdout.print("Success!\n", .{});
 }

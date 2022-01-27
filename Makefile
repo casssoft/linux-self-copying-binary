@@ -1,11 +1,17 @@
 
-all: copymyself_done
+all: copymyself_replace copymyself_add
 
-copymyself_done: copymyself addprogramheader
-	./addprogramheader copymyself copymyself_done
+copymyself_add: copymyself addprogramheader
+	./addprogramheader copymyself copymyself_add
+
+copymyself_replace: copymyself replaceprogramheader
+	./replaceprogramheader copymyself copymyself_replace
 
 copymyself: copymyself.zig
 	zig build-exe -O ReleaseSmall copymyself.zig --strip
+
+replaceprogramheader:
+	gcc replaceprogramheader.c -o replaceprogramheader
 
 addprogramheader:
 	gcc addprogramheader.c -o addprogramheader
@@ -13,5 +19,7 @@ addprogramheader:
 clean:
 	rm -f copymyself
 	rm -f addprogramheader
-	rm -f copymyself_done
+	rm -f replaceprogramheader
+	rm -f copymyself_add
+	rm -f copymyself_replace
 	rm -rf zig-cache
