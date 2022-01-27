@@ -51,3 +51,6 @@ then change stuff and when you close it run:
 :%!xxd -r
 :wq
 ```
+
+# THIS IS NOT A QUINE!
+This counts as cheating in quine world.
