@@ -1,7 +1,10 @@
 # Creates a 64 bit linux binary that can write itself to a file!
 > Wait can't you just read your own binary file and then write it somewhere else?
+
 Yes, buut what if it gets deleted? Or when the process was executed it wasn't given a valid name + PWD env variable?
+
 > Ok but why?
+
 Good question! For fun!
 
 ## What this repo does
